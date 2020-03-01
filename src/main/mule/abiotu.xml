@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="4ecb6ac8-f524-4e5d-a324-0752a767e497" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="abiotuFlow" doc:id="d831535f-ae42-41d1-951c-ace2f96c26bd" >
+		<http:listener doc:name="Listener" doc:id="267af368-a95c-475d-9ab4-b2928d7e40c7" config-ref="HTTP_Listener_config" path="/ab"/>
+		<set-payload value="payload" doc:name="Set Payload" doc:id="258a1b16-83ca-4804-9076-8be3a3a85e45" />
+	</flow>
+</mule>
